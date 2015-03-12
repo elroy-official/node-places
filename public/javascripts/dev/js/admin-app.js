@@ -204,7 +204,11 @@ AdminSinglePlaceView = (function(superClass) {
   };
 
   AdminSinglePlaceView.prototype.deletePlace = function() {
-    return this.model.destroy();
+    var r;
+    r = confirm("Are you sure you want to delete?");
+    if (r) {
+      return this.model.destroy();
+    }
   };
 
   AdminSinglePlaceView.prototype.editPlace = function() {
